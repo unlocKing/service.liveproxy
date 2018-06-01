@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <category label="30102">
+    <setting label="30102" type="lsep" />
+    <setting label="30101" type="number" id="listen_port" default="53422" />
+</settings>
