@@ -3,4 +3,5 @@
   <category label="30102">
     <setting label="30102" type="lsep" />
     <setting label="30101" type="number" id="listen_port" default="53422" />
+  </category>
 </settings>
