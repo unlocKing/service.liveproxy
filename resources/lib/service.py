@@ -4,10 +4,14 @@ import errno
 import logging
 import sys
 
+try:
+    import Cryptodome
+    sys.modules['Crypto'] = Cryptodome
+except ImportError:
+    pass
+
 from liveproxy.shared import (
     check_root,
-    check_streamlink_version,
-    log_current_versions,
     setup_logging,
 )
 from liveproxy.server import (
@@ -25,20 +29,12 @@ log = logging.getLogger('streamlink.liveproxy-service')
 
 
 def main():
-    try:
-        import Cryptodome
-        sys.modules['Crypto'] = Cryptodome
-    except ImportError:
-        pass
-
     setup_logging()
 
     check_root()
-    log_current_versions()
-    check_streamlink_version()
 
     HOST = '0.0.0.0'
-    PORT = int(__addon__.getSetting('listen_port'))
+    PORT = 53422  # int(__addon__.getSetting('listen_port'))
 
     log.info('Starting server: {0} on port {1}'.format(HOST, PORT))
 
@@ -61,5 +57,9 @@ def main():
             break
 
     log.info('Closing server {0} on port {1} ...'.format(HOST, PORT))
-    httpd.shutdown()
     httpd.server_close()
+    httpd.server_close()
+
+
+if __name__ == '__main__':
+    main()

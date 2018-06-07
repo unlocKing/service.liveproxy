@@ -7,4 +7,4 @@
 
 # Guide
 
-A Guide can be found at https://github.com/back-to/liveproxy
+A Guide can be found at https://liveproxy.github.io/
