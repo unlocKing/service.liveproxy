@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="service.liveproxy" name="LiveProxy" version="0.0.1.1" provider-name="back-to">
+<addon id="service.liveproxy" name="LiveProxy" version="0.0.3" provider-name="back-to">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
     <import addon="script.module.streamlink" version="0.13.0"/>
-    <import addon="script.module.back-to-plugins" version="2018.5.31" optional="true"/>
+    <import addon="script.module.back-to-plugins" version="2018.6.26" optional="true"/>
     <import addon="script.module.streamlink-plugins" version="0.0.0" optional="true"/>
   </requires>
   <extension point="xbmc.service" library="resources/lib/service.py" start="[login|startup]" />
@@ -20,6 +20,8 @@
       <icon>resources/icon.png</icon>
     </assets>
     <news>
+0.0.3
+- Allow FFmpeg and RTMP streams, might not work on every platform.
 0.0.1
 - LiveProxy Test Version
     </news>
